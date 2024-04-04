@@ -1,6 +1,6 @@
 {
   "name": "@nightmaregaurav/linq.js",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Linq.js is a library that provides a set of methods to query and manipulate arrays in a functional programming style.",
   "scripts": {
     "compile": "tsc",
