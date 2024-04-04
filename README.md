@@ -21,14 +21,16 @@ Linq.js is a TypeScript library that provides LINQ-like query capabilities for a
 
 ## Installation
 
-Install the library using npm [Currnetly Not Available]
+```bash
+npm install @nightmaregaurav/linq.js
+````
 
 ## Usage
 
 Import the `Linq` class and start chaining operations:
 
 ```typescript
-import { Linq } from 'linqjs';
+import { Linq } from 'linq.js';
 
 const data = [/* your data array */];
 const query = new Linq(data)

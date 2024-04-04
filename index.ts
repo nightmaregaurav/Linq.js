@@ -1,7 +1,4 @@
-type Predicate<T> = (item: T) => boolean;
-type Selector<TSource, TResult> = (item: TSource) => TResult;
-type Comparer<T> = (a: T, b: T) => number;
-type KeySelector<TSource, TKey> = (item: TSource) => TKey;
+import {Comparer, Predicate, Selector} from "@nightmaregaurav/ts-utility-types";
 
 class Linq<T> {
     private readonly data: T[];
@@ -33,7 +30,7 @@ class Linq<T> {
         return new Linq<T>(sortedData);
     }
 
-    groupBy<TKey>(keySelector: KeySelector<T, TKey>): Map<TKey, T[]> {
+    groupBy<TKey>(keySelector: Selector<T, TKey>): Map<TKey, T[]> {
         const groups = new Map<TKey, T[]>();
         for (const item of this.data) {
             const key = keySelector(item);
@@ -47,8 +44,8 @@ class Linq<T> {
 
     join<TInner, TKey, TResult>(
         inner: TInner[],
-        outerKeySelector: KeySelector<T, TKey>,
-        innerKeySelector: KeySelector<TInner, TKey>,
+        outerKeySelector: Selector<T, TKey>,
+        innerKeySelector: Selector<TInner, TKey>,
         resultSelector: (outer: T, inner: TInner) => TResult
     ): Linq<TResult> {
         const joinedData: TResult[] = [];
@@ -268,9 +265,17 @@ class Linq<T> {
             return 0;
         }
         if (selector) {
-            return this.data.reduce((sum, item) => sum + selector(item), 0);
+            let sum = 0;
+            for (const item of this.data) {
+                sum += selector(item);
+            }
+            return sum;
         } else {
-            return this.data.reduce((sum, item) => sum + (item as any), 0);
+            let sum = 0;
+            for (const item of this.data) {
+                sum += item as any;
+            }
+            return sum;
         }
     }
 

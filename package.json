@@ -1,0 +1,30 @@
+{
+  "name": "@nightmaregaurav/linq.js",
+  "version": "0.0.1",
+  "description": "Linq.js is a library that provides a set of methods to query and manipulate arrays in a functional programming style.",
+  "scripts": {
+    "compile": "tsc",
+    "clean": "rm -f *.js && rm -f *.d.ts && rm -f *.js.map"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nightmaregaurav/linq.js.git"
+  },
+  "keywords": [
+    "linq",
+    "linq.js"
+  ],
+  "author": "nightmaregaurav",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nightmaregaurav/linq.js/issues"
+  },
+  "homepage": "https://github.com/nightmaregaurav/linq.js#readme",
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@nightmaregaurav/ts-utility-types": "0.0.1"
+  }
+}
