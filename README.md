@@ -30,7 +30,7 @@ npm install @nightmaregaurav/linq.js
 Import the `Linq` class and start chaining operations:
 
 ```typescript
-import { Linq } from 'linq.js';
+import { Linq } from '@nightmaregaurav/linq.js';
 
 const data = [/* your data array */];
 const query = new Linq(data)
